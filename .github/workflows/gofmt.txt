@@ -21,4 +21,3 @@ jobs:
             author_name: micah teeuws
             author_email: tutmirage@users.noreply.github.com
             message: 'format go files'
-            add: '*.go'
