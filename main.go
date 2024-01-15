@@ -22,16 +22,16 @@ func GetPlayer(text string) string {
 	return player
 }
 func GetCenturies(text string) []int{
-	centuries:= []string{}
-	values :=strings.Split(strings.TrimeSpace(text), ",")
+	centuries:= []int{}
+	values :=strings.Split(strings.TrimSpace(text), ",")
 	for _, value := range centuries {
 	century, err := strconv.Atoi(strings.TrimSpace(value))
 if err != nil {
 	if strings.Contains(value, "147") {
-		cenruries=append(centuries, 147)
+		centuries=append(centuries, 147)
 		}
 } else {
-		cenruries=append(centuries, century)
+		centuries=append(centuries, century)
 }
 
 }
