@@ -13,11 +13,11 @@ jobs:
         run: gofmt -s -w .
       - name: Check for modified files
         id: git-check
-        run: echo "modified=$(if git diff-index --quiet HEAD --; then echo "false"; else echo "true"; fi)" >> $GITHUB_OUTPUT
-      - name: Push changes
+        run: echo ::set-output name=modified::$(if [ -n "$(git status --porcelain)" ]; then echo "true"; else echo "false"; fi)
+      - name: Update changes in GitHub repository
         if: steps.git-check.outputs.modified == 'true'
-        - uses: EndBug/add-and-commit@v9
-          with:
+        uses: EndBug/add-and-commit@v9
+        with:
             author_name: micah teeuws
             author_email: tutmirage@users.noreply.github.com
             message: 'format go files'
