@@ -7,6 +7,17 @@ import (
 	"strings"
 )
 
+func GetPlayer(text string) string {
+player := text
+	if strings.Contains(player, "[[") {
+				
+			}
+if strings.Contains(player, "]]") {
+				
+			}
+
+}
+
 func main() {
 
 	file, _ := os.Open("./raw/2024 Masters (snooker).wiki")
