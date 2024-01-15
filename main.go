@@ -20,7 +20,10 @@ func GetPlayer(text string) string {
 	}
 	return player
 }
-
+func GetCenturies(text string) []int{
+	centuries:= []string{}
+	return centuries
+}
 func main() {
 
 	file, _ := os.Open("./raw/2024 Masters (snooker).wiki")
