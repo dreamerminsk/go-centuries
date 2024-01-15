@@ -22,6 +22,8 @@ func GetPlayer(text string) string {
 }
 func GetCenturies(text string) []int{
 	centuries:= []string{}
+	values :=strings.Split(strings.TrimeSpace(text), ",")
+	
 	return centuries
 }
 func main() {
