@@ -28,9 +28,10 @@ func GetCenturies(text string) []int{
 	century, err := strconv.Atoi(strings.TrimSpace(value))
 if err != nil {
 	if strings.Contains(value, "147") {
-		century=147
+		cenruries=append(centuries, 147)
 		}
-	cenruries=append(centuries, century)
+} else {
+		cenruries=append(centuries, century)
 }
 
 }
