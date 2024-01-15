@@ -24,7 +24,7 @@ func GetPlayer(text string) string {
 func GetCenturies(text string) []int{
 	centuries:= []int{}
 	values :=strings.Split(strings.TrimSpace(text), ",")
-	for _, value := range centuries {
+	for _, value := range values {
 	century, err := strconv.Atoi(strings.TrimSpace(value))
 if err != nil {
 	if strings.Contains(value, "147") {
@@ -41,15 +41,24 @@ func main() {
 
 	file, _ := os.Open("./raw/2024 Masters (snooker).wiki")
 	scanner := bufio.NewScanner(file)
+	ps:=0
+	cs:=0
 	for scanner.Scan() {
 		line := scanner.Text()
 		if strings.HasPrefix(line, "*") {
 			if strings.Contains(line, "{{ndash}}") {
 				parts := strings.Split(line, "{{ndash}}")
-				fmt.Println(GetPlayer(parts[1]))
-				fmt.Println(parts[0])
+				centuries := GetCenturies(parts[0])
+				player:=GetPlayer(parts[1])
+				ps = ps+1
+				cs=cs+len(centuries)
+				fmt.Println(player, len(centuries))
+                                 for _, century := range centuries{
+					 fmt.Println("\t", century)
+				 }
 			}
 		}
 	}
+	fmt.Println("players: ", ps, ", ", "centuries: ", cs)
 
 }
