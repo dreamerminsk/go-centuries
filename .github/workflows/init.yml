@@ -1,7 +1,7 @@
 name: auto-init
 on: workflow_dispatch
 jobs:
-  format:
+  execute:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -12,7 +12,7 @@ jobs:
         with:
           go-version: '1.21'
       - name: gorun
-        run: go run
+        run: go run main.go
       - name: Check for modified files
         id: git-check
         run: echo ::set-output name=modified::$(if [ -n "$(git status --porcelain)" ]; then echo "true"; else echo "false"; fi)
