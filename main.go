@@ -15,10 +15,10 @@ func main() {
 		line := scanner.Text()
 		if strings.HasPrefix(line, "*") {
 			if strings.Contains(line, "{{ndash}}") {
-			parts := strings.Split(line, "{{ndash}}")
-			fmt.Println(parts[1])
-			fmt.Println(parts[0])
-				}
+				parts := strings.Split(line, "{{ndash}}")
+				fmt.Println(parts[1])
+				fmt.Println(parts[0])
+			}
 		}
 	}
 
