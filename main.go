@@ -8,14 +8,17 @@ import (
 )
 
 func GetPlayer(text string) string {
-player := text
+player := strings.TrimSpace(text)
 	if strings.Contains(player, "[[") {
 			player = strings.Replace(player, "[[","", 1)	
 			}
 if strings.Contains(player, "]]") {
 			player = strings.Replace(player, "]]","", 1)		
 			}
-
+	if strings.Contains(player, "|") {
+			player = strings.Split(player, "|")[0]		
+			}
+return player
 }
 
 func main() {
@@ -27,7 +30,7 @@ func main() {
 		if strings.HasPrefix(line, "*") {
 			if strings.Contains(line, "{{ndash}}") {
 				parts := strings.Split(line, "{{ndash}}")
-				fmt.Println(parts[1])
+				fmt.Println(GetPlayer(parts[1]))
 				fmt.Println(parts[0])
 			}
 		}
