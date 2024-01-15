@@ -14,7 +14,7 @@ func main() {
 	for scanner.Scan() {
 		line := scanner.Text()
 		if strings.HasPrefix(line, "*") {
-                  fmt.Println(line)
+			fmt.Println(line)
 		}
 	}
 
