@@ -21,6 +21,7 @@ func GetPlayer(text string) string {
 	}
 	return player
 }
+
 func GetCenturies(text string) []int {
 	centuries := []int{}
 	values := strings.Split(strings.TrimSpace(text), ",")
@@ -37,8 +38,8 @@ func GetCenturies(text string) []int {
 	}
 	return centuries
 }
-func main() {
 
+func main() {
 	file, _ := os.Open("./raw/2024 Masters (snooker).wiki")
 	scanner := bufio.NewScanner(file)
 	ps := 0
@@ -60,5 +61,4 @@ func main() {
 		}
 	}
 	fmt.Println("players: ", ps, ", ", "centuries: ", cs)
-
 }
