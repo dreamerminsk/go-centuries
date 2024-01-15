@@ -8,17 +8,17 @@ import (
 )
 
 func GetPlayer(text string) string {
-player := strings.TrimSpace(text)
+	player := strings.TrimSpace(text)
 	if strings.Contains(player, "[[") {
-			player = strings.Replace(player, "[[","", 1)	
-			}
-if strings.Contains(player, "]]") {
-			player = strings.Replace(player, "]]","", 1)		
-			}
+		player = strings.Replace(player, "[[", "", 1)
+	}
+	if strings.Contains(player, "]]") {
+		player = strings.Replace(player, "]]", "", 1)
+	}
 	if strings.Contains(player, "|") {
-			player = strings.Split(player, "|")[0]		
-			}
-return player
+		player = strings.Split(player, "|")[0]
+	}
+	return player
 }
 
 func main() {
