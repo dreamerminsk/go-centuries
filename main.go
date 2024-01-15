@@ -24,7 +24,7 @@ func GetPlayer(text string) string {
 
 func GetCenturies(text string) []int {
 	centuries := []int{}
-	values := strings.Split(strings.TrimSpace(text), ",")
+	values := strings.Split(strings.TrimSpace(strings.Replace(text, "*", "", 1)), ",")
 	for _, value := range values {
 		century, err := strconv.Atoi(strings.TrimSpace(value))
 		if err != nil {
