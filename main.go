@@ -10,10 +10,10 @@ import (
 func GetPlayer(text string) string {
 player := text
 	if strings.Contains(player, "[[") {
-				
+			player = strings.Replace(player, "[[","", 1)	
 			}
 if strings.Contains(player, "]]") {
-				
+			player = strings.Replace(player, "]]","", 1)		
 			}
 
 }
