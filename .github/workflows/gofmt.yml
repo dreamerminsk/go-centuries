@@ -1,4 +1,4 @@
-name: auto-format
+name: Go Format
 on: workflow_dispatch
 jobs:
   format:
@@ -17,5 +17,5 @@ jobs:
         uses: EndBug/add-and-commit@v9
         with:
             author_name: dreamerminsk
-            author_email: tutmirage@users.noreply.github.com
+            author_email: tutmirage@gmail.com
             message: 'format go files'
