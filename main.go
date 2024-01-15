@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strings"
 )
 
 func main() {
@@ -11,7 +12,10 @@ func main() {
 	file, _ := os.Open("./raw/2024 Masters (snooker).wiki")
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
-		fmt.Println(scanner.Text())
+		line := scanner.Text()
+		if strings.HasPrefix(line, "*") {
+                  fmt.Println(line)
+		}
 	}
 
 }
