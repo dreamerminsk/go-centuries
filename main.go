@@ -14,7 +14,9 @@ func main() {
 	for scanner.Scan() {
 		line := scanner.Text()
 		if strings.HasPrefix(line, "*") {
-			fmt.Println(line)
+			parts:=strings.Split(line,"{{dash}}")
+			fmt.Println(parts[1])
+			fmt.Println(parts[0])
 		}
 	}
 
