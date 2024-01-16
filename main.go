@@ -40,7 +40,7 @@ func GetCenturies(text string) []int {
 }
 
 func main() {
-	file, _ := os.Open("./raw/2024 Masters (snooker).wiki")
+	file, _ := os.Open("./raw/2023 Scottish Open (snooker).wiki")
 	scanner := bufio.NewScanner(file)
 	ps := 0
 	cs := 0
