@@ -73,7 +73,7 @@ func main() {
 
 	for _, file := range files {
 		if !file.IsDir() {
-			fmt.Println(fike.Name())
+			fmt.Println(file.Name())
 			ProcessFile(file.Name())
 		}
 	}
