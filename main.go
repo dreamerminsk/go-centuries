@@ -39,8 +39,8 @@ func GetCenturies(text string) []int {
 	return centuries
 }
 
-func main() {
-	file, _ := os.Open("./raw/2023 Scottish Open (snooker).wiki")
+func ProcessFile(name string) {
+	file, _ := os.Open(name)
 	scanner := bufio.NewScanner(file)
 	ps := 0
 	cs := 0
@@ -61,4 +61,8 @@ func main() {
 		}
 	}
 	fmt.Println("players: ", ps, ", ", "centuries: ", cs)
+}
+
+func main() {
+	ProcessFile("./raw/2023 Scottish Open (snooker).wiki")
 }
