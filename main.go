@@ -47,12 +47,12 @@ func GetCenturies(text string) []int {
 	return centuries
 }
 
-func GetPlayerStats(value string) PlayerStats {
-	if strings.Contains(line, "{{ndash}}") {
-				parts := strings.Split(line, "{{ndash}}")
+func GetPlayerStats(value string) *PlayerStats {
+	if strings.Contains(value, "{{ndash}}") {
+				parts := strings.Split(value, "{{ndash}}")
 				centuries := GetCenturies(parts[0])
 				player := GetPlayer(parts[1])
-		return  PlayerStats{player,  centuries}
+		return  &PlayerStats{player: player,  centuries: centuries}
 			}
 return nil
 
