@@ -55,7 +55,6 @@ func GetPlayerStats(value string) *PlayerStats {
 		return &PlayerStats{Player: player, Centuries: centuries}
 	}
 	return nil
-
 }
 
 func ProcessFile(name string) {
@@ -66,17 +65,15 @@ func ProcessFile(name string) {
 	for scanner.Scan() {
 		line := scanner.Text()
 		if strings.HasPrefix(line, "*") {
-			if strings.Contains(line, "{{ndash}}") {
-				parts := strings.Split(line, "{{ndash}}")
-				centuries := GetCenturies(parts[0])
-				player := GetPlayer(parts[1])
+			pss :=  GetPlayerStats(line)
+			if pss != nil {
 				ps = ps + 1
-				cs = cs + len(centuries)
-				fmt.Println(player, len(centuries))
-				for _, century := range centuries {
+				cs = cs + len(pss.Centuries)
+				fmt.Println(pss.Player, len(pss.Centuries))
+				for _, century := range pss.Centuries {
 					fmt.Println("\t", century)
 				}
-			}
+				}
 		}
 	}
 	fmt.Println("players: ", ps, ", ", "centuries: ", cs)
