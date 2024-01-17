@@ -8,6 +8,7 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"path/filepath"
 )
 
 func GetPlayer(text string) string {
@@ -74,7 +75,7 @@ func main() {
 	for _, file := range files {
 		if !file.IsDir() {
 			fmt.Println(file.Name())
-			ProcessFile(file.Name())
+			ProcessFile(filepath.Join(".", "raw", file.Name()))
 		}
 	}
 }
