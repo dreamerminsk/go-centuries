@@ -11,6 +11,11 @@ import (
 	"path/filepath"
 )
 
+type    PlayerStats    struct {
+	Player string
+	Centuries []int
+}
+
 func GetPlayer(text string) string {
 	player := strings.TrimSpace(text)
 	if strings.Contains(player, "[[") {
