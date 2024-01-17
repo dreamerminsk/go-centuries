@@ -52,7 +52,7 @@ func GetPlayerStats(value string) *PlayerStats {
 				parts := strings.Split(value, "{{ndash}}")
 				centuries := GetCenturies(parts[0])
 				player := GetPlayer(parts[1])
-		return  &PlayerStats{player: player,  centuries: centuries}
+		return  &PlayerStats{Player: player,  Centuries: centuries}
 			}
 return nil
 
