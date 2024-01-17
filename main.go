@@ -65,7 +65,7 @@ func ProcessFile(name string) {
 	for scanner.Scan() {
 		line := scanner.Text()
 		if strings.HasPrefix(line, "*") {
-			pss :=  GetPlayerStats(line)
+			pss := GetPlayerStats(line)
 			if pss != nil {
 				ps = ps + 1
 				cs = cs + len(pss.Centuries)
@@ -73,7 +73,7 @@ func ProcessFile(name string) {
 				for _, century := range pss.Centuries {
 					fmt.Println("\t", century)
 				}
-				}
+			}
 		}
 	}
 	fmt.Println("players: ", ps, ", ", "centuries: ", cs)
