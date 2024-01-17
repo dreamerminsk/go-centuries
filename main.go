@@ -6,6 +6,8 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"io/ioutil"
+	"log"
 )
 
 func GetPlayer(text string) string {
@@ -64,5 +66,15 @@ func ProcessFile(name string) {
 }
 
 func main() {
-	ProcessFile("./raw/2023 Scottish Open (snooker).wiki")
+files, err := ioutil.ReadDir("/raw/")
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    for _, file := range files {
+if !file.IsDir() {
+	fmt.Println(fike.Name())
+ProcessFile(file.Name())
+         }
+    }
 }
