@@ -6,13 +6,13 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"path/filepath"
 	"strconv"
 	"strings"
-	"path/filepath"
 )
 
-type    PlayerStats    struct {
-	Player string
+type PlayerStats struct {
+	Player    string
 	Centuries []int
 }
 
