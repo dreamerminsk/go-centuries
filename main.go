@@ -3,11 +3,11 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io/ioutil"
+	"log"
 	"os"
 	"strconv"
 	"strings"
-	"io/ioutil"
-	"log"
 )
 
 func GetPlayer(text string) string {
@@ -66,15 +66,15 @@ func ProcessFile(name string) {
 }
 
 func main() {
-files, err := ioutil.ReadDir("/raw/")
-    if err != nil {
-        log.Fatal(err)
-    }
+	files, err := ioutil.ReadDir("/raw/")
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    for _, file := range files {
-if !file.IsDir() {
-	fmt.Println(fike.Name())
-ProcessFile(file.Name())
-         }
-    }
+	for _, file := range files {
+		if !file.IsDir() {
+			fmt.Println(fike.Name())
+			ProcessFile(file.Name())
+		}
+	}
 }
