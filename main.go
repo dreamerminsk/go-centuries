@@ -47,6 +47,17 @@ func GetCenturies(text string) []int {
 	return centuries
 }
 
+func GetPlayerStats(value string) PlayerStats {
+	if strings.Contains(line, "{{ndash}}") {
+				parts := strings.Split(line, "{{ndash}}")
+				centuries := GetCenturies(parts[0])
+				player := GetPlayer(parts[1])
+		return  PlayerStats{player,  centuries}
+			}
+return nil
+
+}
+
 func ProcessFile(name string) {
 	file, _ := os.Open(name)
 	scanner := bufio.NewScanner(file)
@@ -72,7 +83,7 @@ func ProcessFile(name string) {
 }
 
 func main() {
-	files, err := ioutil.ReadDir("./raw/")
+	files, err := ioutil.ReadDir(filepath.Join(".", "raw"))
 	if err != nil {
 		log.Fatal(err)
 	}
