@@ -18,4 +18,4 @@ jobs:
         with:
             author_name: dreamerminsk
             author_email: tutmirage@gmail.com
-            message: 'format go files'
+            message: 'gofmt'
