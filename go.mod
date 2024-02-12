@@ -1,3 +1,3 @@
 module github.com/dreamerminsk/go-centuries
 
-go 1.20
+go 1.22
