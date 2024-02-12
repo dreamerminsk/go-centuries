@@ -87,8 +87,9 @@ func main() {
 
 	for _, file := range files {
 		if !file.IsDir() {
-			fmt.Println(file.Name())
+			fmt.Println("<", file.Name(), ">")
 			ProcessFile(filepath.Join(".", "raw", file.Name()))
+			fmt.Println("----------------------")
 		}
 	}
 }
