@@ -11,6 +11,12 @@ import (
 	"strings"
 )
 
+type EventStats  struct   {
+Event string
+Players int
+Centuries int
+}
+
 type PlayerStats struct {
 	Player    string
 	Centuries []int
