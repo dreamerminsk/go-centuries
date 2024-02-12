@@ -11,10 +11,10 @@ import (
 	"strings"
 )
 
-type EventStats  struct   {
-Event string
-Players int
-Centuries int
+type EventStats struct {
+	Event     string
+	Players   int
+	Centuries int
 }
 
 type PlayerStats struct {
