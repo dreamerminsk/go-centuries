@@ -86,7 +86,7 @@ func ProcessFile(name string) {
 }
 
 func main() {
-	files, err := ioutil.ReadDir(filepath.Join(".", "raw"))
+	files, err := ioutil.ReadDir(filepath.Join(".","2023%E2%80%9324", "raw"))
 	if err != nil {
 		log.Fatal(err)
 	}
