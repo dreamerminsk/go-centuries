@@ -22,6 +22,14 @@ type PlayerStats struct {
 	Centuries []int
 }
 
+type Centuries struct {
+C100: int
+C110: int
+C120: int
+C130:int
+C140:int
+}
+
 func GetPlayer(text string) string {
 	player := strings.TrimSpace(text)
 	if strings.Contains(player, "[[") {
