@@ -23,11 +23,11 @@ type PlayerStats struct {
 }
 
 type Centuries struct {
-C100 int
-C110 int
-C120 int
-C130 int
-C140 int
+	C100 int
+	C110 int
+	C120 int
+	C130 int
+	C140 int
 }
 
 func GetPlayer(text string) string {
@@ -94,7 +94,7 @@ func ProcessFile(name string) {
 }
 
 func main() {
-	files, err := ioutil.ReadDir(filepath.Join(".","2023–24", "raw"))
+	files, err := ioutil.ReadDir(filepath.Join(".", "2023–24", "raw"))
 	if err != nil {
 		log.Fatal(err)
 	}
