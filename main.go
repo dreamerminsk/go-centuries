@@ -23,11 +23,11 @@ type PlayerStats struct {
 }
 
 type Centuries struct {
-C100: int
-C110: int
-C120: int
-C130:int
-C140:int
+C100 int
+C110 int
+C120 int
+C130 int
+C140 int
 }
 
 func GetPlayer(text string) string {
