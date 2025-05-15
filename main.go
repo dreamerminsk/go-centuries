@@ -194,7 +194,7 @@ func ExtractSection(wikiText, sectionName string) string {
 
 func ProcessMainDraw(wikiText string) {
 	content := ExtractSection(wikiText, "Main draw")
-	scanner := bufio.NewScanner(strings.NewReader(text))
+	scanner := bufio.NewScanner(strings.NewReader(content))
 	for scanner.Scan() {
 		line := scanner.Text()
 		fmt.Println(line)
