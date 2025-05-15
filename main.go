@@ -157,20 +157,19 @@ func getWikiMarkup(title string) (string, error) {
 	content := main["content"].(string)
 
 	return content, nil
-        }
-        
+}
 
 func ProcessMainDraw(text string) {
-        scanner := bufio.NewScanner(strings.NewReader(text))
-        for scanner.Scan() {
-                line := scanner.Text()
-                if strings.HasPrefix(line, "==") {
-                        fmt.Println(line)
-                }
-        }
-if err := scanner.Err(); err != nil {
-                fmt.Printf("Ошибка: %v\n", err)
-        }
+	scanner := bufio.NewScanner(strings.NewReader(text))
+	for scanner.Scan() {
+		line := scanner.Text()
+		if strings.HasPrefix(line, "==") {
+			fmt.Println(line)
+		}
+	}
+	if err := scanner.Err(); err != nil {
+		fmt.Printf("Ошибка: %v\n", err)
+	}
 }
 
 func main() {
@@ -179,6 +178,6 @@ func main() {
 		fmt.Printf("Ошибка: %v\n", err)
 		return
 	}
- ProcessMainDraw(markup)
+	ProcessMainDraw(markup)
 	fmt.Println(os.Args)
 }
