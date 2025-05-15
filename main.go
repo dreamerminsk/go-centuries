@@ -2,12 +2,12 @@ package main
 
 import (
 	"bufio"
- "encoding/json"
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"log"
- "net/http"
- "net/url"
+	"net/http"
+	"net/url"
 	"os"
 	"path/filepath"
 	"strconv"
@@ -111,9 +111,6 @@ func ProcessFiles() {
 	}
 }
 
-
-
-
 func getWikiMarkup(title string) (string, error) {
 	// Устанавливаем параметры запроса
 	params := url.Values{}
@@ -169,6 +166,5 @@ func main() {
 		return
 	}
 	fmt.Println(markup)
- fmt.Println(os.Args)
+	fmt.Println(os.Args)
 }
-
