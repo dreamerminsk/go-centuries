@@ -14,7 +14,7 @@ func main() {
 		return
 	}
 
-	content, err := page.GetContent()
+	content, err := page.GetSection("Main draw")
 	if err != nil {
 		fmt.Printf("Ошибка: %v\n", err)
 		return
