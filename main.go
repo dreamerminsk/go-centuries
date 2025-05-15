@@ -160,47 +160,46 @@ func getWikiMarkup(title string) (string, error) {
 }
 
 func ExtractSection(wikiText, sectionName string) string {
-        var sectionContent []string
-    inSection := false
-    sectionLevel := 0
-    sectionName = strings.TrimSpace(strings.ToLower(sectionName))
+	var sectionContent []string
+	inSection := false
+	sectionLevel := 0
+	sectionName = strings.TrimSpace(strings.ToLower(sectionName))
 
-        scanner := bufio.NewScanner(strings.NewReader(wikiText))
-        for scanner.Scan() {
-                line := scanner.Text()
-                trimmedLine := strings.TrimSpace(line)
-                if strings.HasPrefix(trimmedLine, "=") && strings.HasSuffix(trimmedLine, "=") {
-            headerText := strings.Trim(trimmedLine, "=")
-            headerText = strings.TrimSpace(headerText)
-            levelCount := len(trimmedLine) - len(strings.TrimLeft(trimmedLine, "="))
+	scanner := bufio.NewScanner(strings.NewReader(wikiText))
+	for scanner.Scan() {
+		line := scanner.Text()
+		trimmedLine := strings.TrimSpace(line)
+		if strings.HasPrefix(trimmedLine, "=") && strings.HasSuffix(trimmedLine, "=") {
+			headerText := strings.Trim(trimmedLine, "=")
+			headerText = strings.TrimSpace(headerText)
+			levelCount := len(trimmedLine) - len(strings.TrimLeft(trimmedLine, "="))
 
-            if inSection && levelCount <= sectionLevel {
-                break
-            }
+			if inSection && levelCount <= sectionLevel {
+				break
+			}
 
-            if strings.ToLower(headerText) == sectionName {
-                inSection = true
-                sectionLevel = levelCount
-                continue
-            }
-        }
+			if strings.ToLower(headerText) == sectionName {
+				inSection = true
+				sectionLevel = levelCount
+				continue
+			}
+		}
 
-        if inSection {
-            sectionContent = append(sectionContent, line)
-        }
-        }
-return strings.TrimSpace(strings.Join(sectionContent, "\n"))
+		if inSection {
+			sectionContent = append(sectionContent, line)
+		}
+	}
+	return strings.TrimSpace(strings.Join(sectionContent, "\n"))
 }
 
 func ProcessMainDraw(wikiText string) {
-        content := ExtractSection(wikiText, "Main draw")
-        scanner := bufio.NewScanner(strings.NewReader(text))
-        for scanner.Scan() {
-                line := scanner.Text()
-                        fmt.Println(line)
-        }
+	content := ExtractSection(wikiText, "Main draw")
+	scanner := bufio.NewScanner(strings.NewReader(text))
+	for scanner.Scan() {
+		line := scanner.Text()
+		fmt.Println(line)
+	}
 }
-
 
 func main() {
 	markup, err := getWikiMarkup("2025 World Snooker Championship")
