@@ -14,7 +14,7 @@ jobs:
       - name: Add dependency
         run: go get github.com/trietmn/go-wiki
       - name: Run main.go
-        run: go run -v matches.go
+        run: go run -v matches2.go
       - name: Check for modified files
         id: git-check
         run: echo ::set-output name=modified::$(if [ -n "$(git status --porcelain)" ]; then echo "true"; else echo "false"; fi)
