@@ -159,7 +159,7 @@ func getWikiMarkup(title string) (string, error) {
 	return content, nil
 }
 
-func ExtractSection(wikiText, sectionName string) string {
+func ExtractFullSection(wikiText, sectionName string) string {
 	var sectionContent []string
 	inSection := false
 	sectionLevel := 0
@@ -182,6 +182,35 @@ func ExtractSection(wikiText, sectionName string) string {
 				inSection = true
 				sectionLevel = levelCount
 				continue
+			}
+		}
+
+		if inSection {
+			sectionContent = append(sectionContent, line)
+		}
+	}
+	return strings.TrimSpace(strings.Join(sectionContent, "\n"))
+}
+
+func ExtractSection(wikiText, sectionName string) string {
+	var sectionContent []string
+	inSection := false
+	sectionName = strings.TrimSpace(strings.ToLower(sectionName))
+
+	scanner := bufio.NewScanner(strings.NewReader(wikiText))
+	for scanner.Scan() {
+		line := scanner.Text()
+		trimmedLine := strings.TrimSpace(line)
+		if strings.HasPrefix(trimmedLine, "=") && strings.HasSuffix(trimmedLine, "=") {
+			headerText := strings.Trim(trimmedLine, "=")
+			headerText = strings.TrimSpace(headerText)
+
+			if inSection {
+				break
+			}
+
+			if strings.ToLower(headerText) == sectionName {
+				inSection = true
 			}
 		}
 
