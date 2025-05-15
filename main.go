@@ -159,12 +159,22 @@ func getWikiMarkup(title string) (string, error) {
 	return content, nil
 }
 
+func ProcessMainDraw(text string) {
+        scanner := bufio.NewScanner(text)
+        for scanner.Scan() {
+                line := scanner.Text()
+                if strings.HasPrefix(line, "=") {
+                        fmt.Println(line)
+                }
+        }
+}
+
 func main() {
 	markup, err := getWikiMarkup("2025 World Snooker Championship")
 	if err != nil {
 		fmt.Printf("Ошибка: %v\n", err)
 		return
 	}
-	fmt.Println(markup)
+ ProcessMainDraw(markup)
 	fmt.Println(os.Args)
 }
