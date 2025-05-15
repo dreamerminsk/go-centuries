@@ -157,7 +157,10 @@ func getWikiMarkup(title string) (string, error) {
 	content := main["content"].(string)
 
 	return content, nil
-}
+        }
+        if err := scanner.Err(); err != nil {
+                // handle I/O or tokenization error
+        }
 
 func ProcessMainDraw(text string) {
         scanner := bufio.NewScanner(strings.NewReader(text))
