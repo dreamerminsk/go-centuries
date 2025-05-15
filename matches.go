@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	gowiki.SetLang("en")
+	gowiki.SetLanguage("en")
 
 	page, err := gowiki.GetPage("2025 World Snooker Championship", -1, false, true)
 	if err != nil {
