@@ -226,7 +226,9 @@ func ProcessMainDraw(wikiText string) {
 	scanner := bufio.NewScanner(strings.NewReader(content))
 	for scanner.Scan() {
 		line := scanner.Text()
-		fmt.Println(line)
+  if strings.Contains(line, "flagathlete") {
+		  fmt.Println(line)
+  }
 	}
 }
 
