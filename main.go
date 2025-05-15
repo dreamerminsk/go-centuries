@@ -160,7 +160,7 @@ func getWikiMarkup(title string) (string, error) {
 }
 
 func ProcessMainDraw(text string) {
-        scanner := bufio.NewScanner(text)
+        scanner := bufio.NewScanner(strings.NewReader(text))
         for scanner.Scan() {
                 line := scanner.Text()
                 if strings.HasPrefix(line, "=") {
