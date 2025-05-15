@@ -6,9 +6,9 @@ import (
 )
 
 func main() {
-	wiki.SetLang("en")
+	gowiki.SetLang("en")
 
-	page, err := wiki.GetPage("2025 World Snooker Championship", -1, false, true)
+	page, err := gowiki.GetPage("2025 World Snooker Championship", -1, false, true)
 	if err != nil {
 		fmt.Printf("Ошибка: %v\n", err)
 		return
