@@ -158,9 +158,7 @@ func getWikiMarkup(title string) (string, error) {
 
 	return content, nil
         }
-        if err := scanner.Err(); err != nil {
-                // handle I/O or tokenization error
-        }
+        
 
 func ProcessMainDraw(text string) {
         scanner := bufio.NewScanner(strings.NewReader(text))
@@ -169,6 +167,9 @@ func ProcessMainDraw(text string) {
                 if strings.HasPrefix(line, "==") {
                         fmt.Println(line)
                 }
+        }
+if err := scanner.Err(); err != nil {
+                fmt.Printf("Ошибка: %v\n", err)
         }
 }
 
