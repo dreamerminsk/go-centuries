@@ -163,7 +163,7 @@ func ProcessMainDraw(text string) {
         scanner := bufio.NewScanner(strings.NewReader(text))
         for scanner.Scan() {
                 line := scanner.Text()
-                if strings.HasPrefix(line, "=") {
+                if strings.HasPrefix(line, "==") {
                         fmt.Println(line)
                 }
         }
