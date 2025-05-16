@@ -76,7 +76,7 @@ func ExtractParams(wikiText string) string {
      var param strings.Builder
     for i := 0; i < len(wikiText) - 1; i++ {
          if wikiText[i] == "|" && openCount == 0 {
-             params = append(params, param.String()
+             params = append(params, param.String())
              param.Reset()
          } else if wikiText[i] == "{" {
              param.WriteByte(wikiText[i])
