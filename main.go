@@ -116,7 +116,7 @@ func ProcessMainDraw(wikiText string) {
 	row := 1
 	for scanner.Scan() {
 		line := scanner.Text()
-		fmt.Printf("Row #%v — ©%v®\n", row, line)
+		//fmt.Printf("Row #%v — ©%v®\n", row, line)
 		if strings.Contains(line, "flagathlete") || strings.Contains(line, "flagicon") {
 			params := wiki.ExtractParams(line)
 			fmt.Println(strings.Join(params, "\n"))
@@ -126,7 +126,7 @@ func ProcessMainDraw(wikiText string) {
 }
 
 func main() {
-	markup, err := client.GetContent("2023 World Snooker Championship")
+	markup, err := client.GetContent("2012 World Snooker Championship")
 	if err != nil {
 		fmt.Printf("Ошибка: %v\n", err)
 		return
