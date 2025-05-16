@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"encoding/json"
 	"fmt"
-	"github.com/dreamerminsk/go-centuries"
+	"github.com/dreamerminsk/go-centuries/wiki"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -161,7 +161,7 @@ func getWikiMarkup(title string) (string, error) {
 }
 
 func ProcessMainDraw(wikiText string) {
-	content := ExtractSection(wikiText, "Main draw")
+	content := wiki.ExtractSection(wikiText, "Main draw")
 	scanner := bufio.NewScanner(strings.NewReader(content))
 	for scanner.Scan() {
 		line := scanner.Text()
