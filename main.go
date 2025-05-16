@@ -233,7 +233,7 @@ func ProcessMainDraw(wikiText string) {
 }
 
 func main() {
-	markup, err := getWikiMarkup("2025 World Snooker Championship")
+	markup, err := getWikiMarkup("1985 World Snooker Championship")
 	if err != nil {
 		fmt.Printf("Ошибка: %v\n", err)
 		return
