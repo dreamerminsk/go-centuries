@@ -1,6 +1,7 @@
 package main
 
 import (
+"io/ioutil"
 	"bufio"
 	"fmt"
 	"github.com/dreamerminsk/go-centuries/wiki"
