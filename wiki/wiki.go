@@ -66,3 +66,33 @@ func ExtractSection(wikiText, sectionName string) string {
 	}
 	return strings.TrimSpace(strings.Join(sectionContent, "\n"))
 }
+
+
+
+
+func ExtractParams(wikiText string) string {
+    params := []string{}
+    openCount := 0
+     var param strings.Builder
+    for i := 0; i < len(wikiText) - 1; i++ {
+         if wikiText[i] == "|" && openCount == 0 {
+             params = append(params, param.String()
+             param.Reset()
+         } else if wikiText[i] == "{" {
+             param.WriteByte(wikiText[i])
+             openCount++
+         } else if wikiText[i] == "[" {
+             param.WriteByte(wikiText[i])
+             openCount++
+         } else if wikiText[i] == "}" {
+             param.WriteByte(wikiText[i])
+             openCount--
+         } else if wikiText[i] == "]" {
+             param.WriteByte(wikiText[i])
+             openCount--
+         } else {
+            param.WriteByte(wikiText[i])
+         }
+    }
+return params
+}
