@@ -1,16 +1,16 @@
 package main
 
 import (
-"io/ioutil"
 	"bufio"
 	"fmt"
 	"github.com/dreamerminsk/go-centuries/wiki"
+	"github.com/dreamerminsk/go-centuries/wiki/client"
+	"io/ioutil"
 	"log"
 	"os"
 	"path/filepath"
 	"strconv"
 	"strings"
-  "github.com/dreamerminsk/go-centuries/wiki/client"
 )
 
 type EventStats struct {
@@ -113,15 +113,15 @@ func ProcessFiles() {
 func ProcessMainDraw(wikiText string) {
 	content := wiki.ExtractSection(wikiText, "Main draw")
 	scanner := bufio.NewScanner(strings.NewReader(content))
- row := 1
+	row := 1
 	for scanner.Scan() {
 		line := scanner.Text()
-  fmt.Printf("Row #%v — ©%v®\n", row, line)
+		fmt.Printf("Row #%v — ©%v®\n", row, line)
 		if strings.Contains(line, "flagathlete") || strings.Contains(line, "flagicon") {
 			params := wiki.ExtractParams(line)
 			fmt.Println(strings.Join(params, "\n"))
 		}
-  row++
+		row++
 	}
 }
 
