@@ -163,8 +163,10 @@ func getWikiMarkup(title string) (string, error) {
 func ProcessMainDraw(wikiText string) {
 	content := wiki.ExtractSection(wikiText, "Main draw")
 	scanner := bufio.NewScanner(strings.NewReader(content))
+ row := 1
 	for scanner.Scan() {
 		line := scanner.Text()
+  fmt.Printf("Row #%v\n", row)
 		if strings.Contains(line, "flagathlete") {
 			params := wiki.ExtractParams(line)
 			fmt.Println(strings.Join(params, "\n"))
