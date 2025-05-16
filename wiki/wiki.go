@@ -91,5 +91,8 @@ func ExtractParams(wikiText string) []string {
 			param.WriteByte(wikiText[i])
 		}
 	}
+ if param.Len() > 0 {
+    params = append(params, param.String())
+  }
 	return params
 }
