@@ -167,7 +167,7 @@ func ProcessMainDraw(wikiText string) {
 	for scanner.Scan() {
 		line := scanner.Text()
   fmt.Printf("Row #%v — ©%v®\n", row, line)
-		if strings.Contains(line, "flagathlete") {
+		if strings.Contains(line, "flagathlete") || strings.Contains(line, "flagicon") {
 			params := wiki.ExtractParams(line)
 			fmt.Println(strings.Join(params, "\n"))
 		}
