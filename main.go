@@ -166,11 +166,12 @@ func ProcessMainDraw(wikiText string) {
  row := 1
 	for scanner.Scan() {
 		line := scanner.Text()
-  fmt.Printf("Row #%v\n", row)
+  fmt.Printf("Row #%v — ©%v®\n", row, line)
 		if strings.Contains(line, "flagathlete") {
 			params := wiki.ExtractParams(line)
 			fmt.Println(strings.Join(params, "\n"))
 		}
+  row++
 	}
 }
 
