@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"encoding/json"
 	"fmt"
+	"github.com/dreamerminsk/go-centuries"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -12,7 +13,6 @@ import (
 	"path/filepath"
 	"strconv"
 	"strings"
-"github.com/dreamerminsk/go-centuries"
 )
 
 type EventStats struct {
