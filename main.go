@@ -167,13 +167,13 @@ func ProcessMainDraw(wikiText string) {
 		line := scanner.Text()
 		if strings.Contains(line, "flagathlete") {
    params := wiki.ExtractParams(line)
-			fmt.Println(params)
+			fmt.Println(strings.Join(params, "\n"))
 		}
 	}
 }
 
 func main() {
-	markup, err := getWikiMarkup("1985 World Snooker Championship")
+	markup, err := getWikiMarkup("2023 World Snooker Championship")
 	if err != nil {
 		fmt.Printf("Ошибка: %v\n", err)
 		return
