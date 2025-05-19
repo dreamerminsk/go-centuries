@@ -7,7 +7,7 @@
 
 
 |nation|1970|1980|1990|2000|
-|:---|---:|---:|---:|---:|
+|:---:|:---:|:---:|:---:|:---:|
 |ENG|Ronnie O'Sullivan|Judd Trump|Kyren Wilson|Stan Moody|
 |CHN|—|Ding Junhui|Zhao Xintong|Si Jiahui|
 |WAL|Mark J Williams|Ryan Day|Jak Jones|Jackson Page|
