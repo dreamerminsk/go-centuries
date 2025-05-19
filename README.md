@@ -25,3 +25,11 @@
 
 # go-centuries
 test data repo
+
+## stats shields
+![commits](https://img.shields.io/github/commit-activity/y/dreamerminsk/go-centuries)
+![commits](https://img.shields.io/github/commit-activity/m/dreamerminsk/go-centuries)
+![commits](https://img.shields.io/github/commit-activity/w/dreamerminsk/go-centuries)
+
+![](https://img.shields.io/github/languages/code-size/dreamerminsk/go-centuries)
+![](https://img.shields.io/github/repo-size/dreamerminsk/go-centuries)
