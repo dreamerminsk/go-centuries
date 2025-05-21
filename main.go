@@ -126,7 +126,7 @@ func ProcessMainDraw(wikiText string) {
 }
 
 func main() {
-	markup, err := client.GetContent("2012 World Snooker Championship")
+	markup, err := client.GetContent("2000 World Snooker Championship")
 	if err != nil {
 		fmt.Printf("Ошибка: %v\n", err)
 		return
